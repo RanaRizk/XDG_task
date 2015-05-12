@@ -5,5 +5,5 @@ function __autoload($classname) {
     include_once($filename);
     }
 session_destroy();
-header("Location: http://localhost/XDG/docs/Login_User.php")
+header("Location: http://localhost/XDG_task/docs/Login_User.php")
 ?>

@@ -29,8 +29,8 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="http://localhost/XDG/docs/start.php">Home</a></li>
-        <li><a href="http://localhost/XDG/docs/Logout_User.php">logout</a></li>
+        <li class="active"><a href="http://localhost/XDG_task/docs/start.php">Home</a></li>
+        <li><a href="http://localhost/XDG_task/docs/Logout_User.php">logout</a></li>
    
       
       </ul>
@@ -103,7 +103,7 @@ function __autoload($classname) {
 
 <?php
 }else{
-        header("Location:http://localhost/XDG/docs/Login_User.php");
+        header("Location:http://localhost/XDG_task/docs/Login_User.php");
 
 
 }

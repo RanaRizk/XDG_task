@@ -23,5 +23,5 @@ $id=$value['id'];
 
 
 ?>
-<h1><a href="http://localhost/XDG/docs/Login_User.php" style="margin-left:20px; margin-top:20px;"><font size="0.5">Login?</font></a>
+<h1><a href="http://localhost/XDG_task/docs/Login_User.php" style="margin-left:20px; margin-top:20px;"><font size="0.5">Login?</font></a>
 </h1>

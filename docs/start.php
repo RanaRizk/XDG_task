@@ -21,10 +21,10 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="http://localhost/XDG/docs/start.php">Home</a></li>
-        <li><a href="http://localhost/XDG/docs/Login_User.php">login</a></li>
-        <li><a href="http://localhost/XDG/docs/Add_User.php">sign up</a></li>
-        <li><a href="http://localhost/XDG/docs/List_User.php">Protected Page</a></li>
+        <li class="active"><a href="http://localhost/XDG_task/docs/start.php">Home</a></li>
+        <li><a href="http://localhost/XDG_task/docs/Login_User.php">login</a></li>
+        <li><a href="http://localhost/XDG_task/docs/Add_User.php">sign up</a></li>
+        <li><a href="http://localhost/XDG_task/docs/List_User.php">Protected Page</a></li>
       
       </ul>
     </div>

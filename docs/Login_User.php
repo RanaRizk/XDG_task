@@ -19,10 +19,10 @@
     </div>
     <div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="http://localhost/XDG/docs/start.php">Home</a></li>
-        <li><a href="http://localhost/XDG/docs/Login_User.php">login</a></li>
-        <li><a href="http://localhost/XDG/docs/Add_User.php">sign up</a></li>
-        <li><a href="http://localhost/XDG/docs/List_User.php">Protected Page</a></li>
+        <li class="active"><a href="http://localhost/XDG_task/docs/start.php">Home</a></li>
+        <li><a href="http://localhost/XDG_task/docs/Login_User.php">login</a></li>
+        <li><a href="http://localhost/XDG_task/docs/Add_User.php">sign up</a></li>
+        <li><a href="http://localhost/XDG_task/docs/List_User.php">Protected Page</a></li>
       
       </ul>
     </div>
@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['password'] = $value["password"];
          $_SESSION['email'] = $value["email"];
         $_SESSION['id'] = $value["id"];
-            header("Location: http://localhost/XDG/docs/List_User.php");
+            header("Location: http://localhost/XDG_task/docs/List_User.php");
       }else {
 
         // password is incorrect
@@ -106,8 +106,8 @@ if (isset($_POST['submit'])) {
    <br/>
 
 <div class="form-group">
-<a href="http://localhost/XDG/docs/Forget_Password.html" style="margin-left:20px; margin-top:20px;"><font size="0.5">Forget password?</font></a>
-<a href="http://localhost/XDG/docs/New_Password.html" style="margin-left:20px; margin-top:20px;"><font size="0.5">New password?</font></a>
+<a href="http://localhost/XDG_task/docs/Forget_Password.html" style="margin-left:20px; margin-top:20px;"><font size="0.5">Forget password?</font></a>
+<a href="http://localhost/XDG_task/docs/New_Password.html" style="margin-left:20px; margin-top:20px;"><font size="0.5">New password?</font></a>
       
  <input type="submit" name="submit" class="btn btn-primary" style="float:right" value="submit"> 
 </div>
