@@ -1,0 +1,112 @@
+<!----------create scoket--------------->
+
+<script >
+var exampleSocket = new WebSocket("ws://127.0.0.1:8002");
+
+function status(id,name,price,image){
+  var status;
+  var state = document.getElementById(id).value;
+  if (state == "available") {
+    document.getElementById(id).value = "unavailable";
+    status = "unavailable";
+  }else{
+    document.getElementById(id).value = "available";
+    status = "available";
+  }
+
+
+  //send ajax request to the server
+  if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById(id).innerHTML = xmlhttp.responseText;
+                exampleSocket.send("product:"+id+":"+status+":"+name+":"+price+":"+image);
+               
+            }
+        }
+        xmlhttp.open("GET","status.php?state="+status+"&id="+id,true);
+        xmlhttp.send();
+
+}
+
+
+</script>
+
+
+
+
+
+<!--------------------fe page ely btst2bl --------------------->
+
+
+var exampleSocket = new WebSocket("ws://127.0.0.1:8002");
+   exampleSocket.onmessage = function (event) {
+       console.log("fe el home user " + event.data);
+       var msg = event.data;
+       var res = msg.split(":");
+       console.log(res[0]);
+       console.log(res[1]);
+       
+       if (res[0] == "product") {
+          if (res[2] == "unavailable") {
+            document.getElementById("image"+res[1]).remove();
+            document.getElementById("name"+res[1]).remove();
+            document.getElementById("price"+res[1]).remove();
+          }else{
+            
+            var img = document.createElement("img");
+            img.setAttribute("src",'../uploads/'+res[5]);
+            img.setAttribute("height","100px");
+            img.setAttribute("width","100px");
+            img.setAttribute("id","image"+res[1]);
+            
+            var spanName = document.createElement("span");
+            spanName.setAttribute("class" ,"label label-info text center");
+            var name = document.createTextNode(res[3]);
+            spanName.appendChild(name);
+
+            var br = document.createElement("br");
+            var br1 = document.createElement("br");
+            var br2 = document.createElement("br");
+
+
+            var spanPrice = document.createElement("span");
+            spanPrice.setAttribute("class" ,"badge label label-warning");
+            var price = document.createTextNode(res[4] + " LE");
+            spanPrice.appendChild(price);
+
+            var h4 = document.createElement("h4");
+             h4.appendChild(spanName); 
+            var par = document.getElementById("header2");
+
+
+            par.appendChild(img);
+            par.appendChild(br1);
+            par.appendChild(h4);
+            
+            par.appendChild(spanPrice);
+
+            img.addEventListener("click" ,function(){
+              myFunction(res[1],parseInt(res[4]),res[3]);
+            
+          });
+          
+       }
+     }
+ 
+  }
+
+
+
+
+
+
+
+
+
